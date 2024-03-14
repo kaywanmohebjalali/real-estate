@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+    .body{
+        direction: rtl;
+    }
+    *{
+      direction: inherit;
+    }
+}
+
+
+@layer components{
+    .container{
+        @apply w-[90%] m-auto
+    }
+}
+
+
+
+
+.sidebar__label {
+    display: inline-block;
+    width: 100%;
+    min-height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 40;
+}
+
+.sidebar__input {
+display: none;
+}
+
+
+
+.sidebar__btn {
+    width: 2rem;
+    height: 2px;
+    background-color: #fff;
+    position: relative;
+    transition: all 0.4s;
+    padding-bottom: -1rem;
+}
+
+.sidebar__btn::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: -1rem;
+    /* right: 0; */
+    transition: all 0.4s;
+    transform: translateY(5px);
+    
+}
+
+.sidebar__btn::after {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 1rem;
+    /* right: 0; */
+    transition: all 0.4s;
+    transform: translateY(-5px);
+}
+
+
+.sidebar__input:checked + .sidebar__label .sidebar__btn {
+    height: 0;
+}
+.sidebar__input:checked + .sidebar__label .sidebar__btn::before {
+    top: 0;
+    transform: rotate(-45deg);
+}
+.sidebar__input:checked + .sidebar__label .sidebar__btn::after {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.sidebar__input:checked ~ .list {
+    opacity: 1;
+    width: 50%;
+    visibility: visible;
+    z-index: 35;
+    transform: translate(-50%, -50%);
+}
+
+
+.sidebar__bg {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    background-color: #101d2c;
+    transform: scale(0);
+    transition: width 0.6s, height 0.6s, transform 0.4s;
+}
+
+
+
+.sidebar__input:checked ~ .sidebar__bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: scale(1);
+    z-index: 30;
+}
+

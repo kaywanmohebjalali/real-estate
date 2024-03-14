@@ -9,5 +9,5 @@ export default function Home() {
     <h1>
         home Page
     </h1>
-  );
+  )
 }
