@@ -15,7 +15,11 @@
 
 @layer components{
     .container{
-        @apply w-[90%] m-auto
+        @apply w-[80%] m-auto
+    }
+
+    .button{
+        @apply flex justify-center min-w-32  bg-backGround-gold   pt-1 pb-2 text-white text-[0.9rem] font-bold rounded-sm
     }
 }
 
@@ -57,7 +61,7 @@ display: none;
     background-color: #fff;
     position: absolute;
     top: -1rem;
-    /* right: 0; */
+  
     transition: all 0.4s;
     transform: translateY(5px);
     
@@ -71,7 +75,7 @@ display: none;
     background-color: #fff;
     position: absolute;
     top: 1rem;
-    /* right: 0; */
+   
     transition: all 0.4s;
     transform: translateY(-5px);
 }
@@ -122,3 +126,63 @@ display: none;
     z-index: 30;
 }
 
+.sidebar__input:checked ~ .sidebar__bg .list{
+    z-index: 10000;
+    margin-top: 9rem;
+    transition: all 0.7s ease ;
+  
+}
+
+
+.header {
+    background-image: linear-gradient(
+           
+           
+            #101d2cef ,         
+            #101d2cef          
+            
+        ),
+        url("/img/gal-4.jpeg");
+    background-size: cover;
+    background-position: center;
+   
+   
+}
+
+.line{
+    overflow: hidden;
+    width: 100%;
+    white-space: noWrap;
+    border-color: #a6a6aa;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line::before{
+    content: '';
+    display: inline-block;
+    width: 45%;
+    height: 1px;
+   
+    margin-right: 20px;
+    background-color: #a6a6aa;
+    
+ 
+    
+}
+
+.line::after{
+    content: '';
+    display: inline-block;
+    width:45%;
+    height: 1px;
+    background-color: #a6a6aa;
+   
+    margin-left: 20px;
+
+
+    
+   
+}

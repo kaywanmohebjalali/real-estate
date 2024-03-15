@@ -1,9 +1,10 @@
+import Link from 'next/link'
 import React from 'react'
 
 const SideBar = () => {
   return (
     
-    <div className='flex items-start xl:items-center   text-gray-50  bg-backGround-gold w-20 xl:w-full absolute top-0 bottom-0 xl:bottom-[92vh] right-0 xl:left-0'>
+    <div className='flex items-center xl:items-start    text-gray-50  bg-backGround-gold w-full xl:w-20 absolute top-0 bottom-[92vh] xl:bottom-0 right-0  '>
 
       <input
                     type="checkbox"
@@ -11,10 +12,30 @@ const SideBar = () => {
                     id="sidebar-toggle"
                     class="sidebar__input"
                     />
-                <label for="sidebar-toggle" class="sidebar__label flex items-center justify-center">
-                    <div  class="sidebar__btn xl:ml-auto xl:mr-4"></div>
+                <label for="sidebar-toggle" className="sidebar__label flex items-center justify-center">
+                    <div  className="sidebar__btn ml-auto mr-4 xl:mx-auto"></div>
                 </label>
-                <div class="sidebar__bg"></div>
+                <div className="sidebar__bg">
+
+                <ul className="list w-full h-full  flex  items-center flex-col gap-9 mt-[-1000px]">
+                    <li className="button">
+                        <Link href="index.html" className=''>صفحه اصلی</Link>
+                    </li>
+                    <li className="button">
+                        <Link href="#" className="">ویژگی ها</Link>
+                    </li>
+                    <li className="button">
+                        <Link href="" className="">نظرات</Link>
+                    </li>
+                    <li className="button">
+                        <Link href="houses.html" className="">خانه ها</Link>
+                    </li>
+                    <li className="button">
+                        <Link href="#" className="">گالری</Link>
+                    </li>
+                </ul>
+                </div>
+                
       </div>
                    
   )

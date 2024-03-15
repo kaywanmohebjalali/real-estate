@@ -4,9 +4,9 @@ import Header from './Header'
 
 const TopSite = () => {
   return (
-    <div className='container grid grid-cols-4 min-h-[80vh]'>
-         <RealTors className="grid-cols-1" />
+    <div className=' grid grid-cols-4  h-[70vh] mt-[8vh]  xl:mt-0 '>
         <Header/>
+         <RealTors/>
     </div>
   )
 }
