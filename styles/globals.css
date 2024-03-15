@@ -4,24 +4,54 @@
 
 
 @layer base{
-    .body{
+    @font-face {
+        font-family: 'koodak';
+        src: url('/fonts/KoodakBold.eot?#') format('eot'),
+            url('/fonts/KoodakBold.ttf') format('truetype'),
+            url('/fonts/KoodakBold.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'yekan';
+        src: url('/fonts/Yekan.eot?#') format('eot'),
+            url('/fonts/Yekan.ttf') format('truetype'),
+            url('/fonts/Yekan.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'nazanin';
+        src: url('/fonts/Nazanin.eot') format('eot'),
+            url('/fonts/Nazanin.ttf') format('truetype'),
+            url('/fonts/Nazanin.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'gandom';
+        src: url('/fonts/Gandom.eot') format('eot'),
+            url('/fonts/Gandom.ttf') format('truetype'),
+            url('/fonts/Gandom.woff') format('woff');
+    }
+    body{
         direction: rtl;
+        font-family: 'koodak';
+        
     }
     *{
       direction: inherit;
+      font-family: inherit;
+      
     }
 }
 
 
 @layer components{
     .container{
-        @apply w-[80%] m-auto
+        @apply w-full px-4 sm:px-0 sm:w-[90%] md:w-[80%] mx-auto
     }
 
     .button{
         @apply flex justify-center min-w-32  bg-backGround-gold   pt-1 pb-2 text-white text-[0.9rem] font-bold rounded-sm
     }
 }
+
+
 
 
 

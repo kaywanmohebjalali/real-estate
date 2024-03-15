@@ -4,15 +4,15 @@ import React from 'react'
 const SideBar = () => {
   return (
     
-    <div className='flex items-center xl:items-start    text-gray-50  bg-backGround-gold w-full xl:w-20 absolute top-0 bottom-[92vh] xl:bottom-0 right-0  '>
+    <div className='flex items-center xl:items-start    text-gray-50  bg-backGround-gold w-full xl:w-20 fixed top-0 bottom-[92vh] xl:bottom-0 right-0  '>
 
       <input
                     type="checkbox"
                     name="toggle"
                     id="sidebar-toggle"
-                    class="sidebar__input"
+                    className="sidebar__input"
                     />
-                <label for="sidebar-toggle" className="sidebar__label flex items-center justify-center">
+                <label htmlFor="sidebar-toggle" className="sidebar__label flex items-center justify-center">
                     <div  className="sidebar__btn ml-auto mr-4 xl:mx-auto"></div>
                 </label>
                 <div className="sidebar__bg">

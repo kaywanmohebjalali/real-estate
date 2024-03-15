@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
   return (
       <header className='header col-span-4 xl:col-span-3 h-[50vh] xl:h-[70vh] xl:mr-[5rem]'>
-        <div className='container text-end flex flex-col justify-center gap-8 h-full'>
+        <div className='container text-start flex flex-col justify-center gap-8 h-full'>
     <img src="img/logo.png" alt="Nexter Logo" className="w-36 mx-auto"/>
                 <h3 className="text-backGround-gold font-bold text-xl"> :خانه خودتان</h3>
                 <h1 className="text-white font-bold  sm:text-3xl">

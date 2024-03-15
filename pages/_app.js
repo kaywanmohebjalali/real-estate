@@ -8,7 +8,9 @@ export default function App({ Component, pageProps }) {
    <>
    <TopSite/>
    <SideBar/>
+       <div className="my-6 ">
      <Component {...pageProps} />
+     </div>
      <Footer/>
    </>
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 const BoxImage = ({children='', src=''}) => {
   return (
-    <div className="box flex   sm:pr-0 flex-row-reverse items-center gap-4 ">
+    <div className="box flex   sm:pr-0  items-center gap-4 ">
     <img
       src={src}
       alt="real-tors top 1"

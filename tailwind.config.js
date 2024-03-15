@@ -23,6 +23,9 @@ module.exports = {
           gold:"#c69963",
           dark:"#101d2c"
         }
+      },
+      screens:{
+        'small':'500px'
       }
     },
   },
