@@ -3,51 +3,56 @@
 @tailwind utilities;
 
 
-@layer base{
+@layer base {
     @font-face {
         font-family: 'koodak';
         src: url('/fonts/KoodakBold.eot?#') format('eot'),
             url('/fonts/KoodakBold.ttf') format('truetype'),
             url('/fonts/KoodakBold.woff') format('woff');
     }
+
     @font-face {
         font-family: 'yekan';
         src: url('/fonts/Yekan.eot?#') format('eot'),
             url('/fonts/Yekan.ttf') format('truetype'),
             url('/fonts/Yekan.woff') format('woff');
     }
+
     @font-face {
         font-family: 'nazanin';
         src: url('/fonts/Nazanin.eot') format('eot'),
             url('/fonts/Nazanin.ttf') format('truetype'),
             url('/fonts/Nazanin.woff') format('woff');
     }
+
     @font-face {
         font-family: 'gandom';
         src: url('/fonts/Gandom.eot') format('eot'),
             url('/fonts/Gandom.ttf') format('truetype'),
             url('/fonts/Gandom.woff') format('woff');
     }
-    body{
+
+    body {
         direction: rtl;
         font-family: 'koodak';
-        
+
     }
-    *{
-      direction: inherit;
-      font-family: inherit;
-      
+
+    * {
+        direction: inherit;
+        font-family: inherit;
+
     }
 }
 
 
-@layer components{
-    .container{
+@layer components {
+    .container {
         @apply w-full px-4 sm:px-0 sm:w-[90%] md:w-[80%] mx-auto
     }
 
-    .button{
-        @apply flex justify-center min-w-32  bg-backGround-gold   pt-1 pb-2 text-white text-[0.9rem] font-bold rounded-sm
+    .button {
+        @apply flex justify-center min-w-32 bg-backGround-gold pt-1 pb-2 text-white text-[0.9rem] font-bold rounded-sm
     }
 }
 
@@ -69,7 +74,7 @@
 }
 
 .sidebar__input {
-display: none;
+    display: none;
 }
 
 
@@ -91,10 +96,10 @@ display: none;
     background-color: #fff;
     position: absolute;
     top: -1rem;
-  
+
     transition: all 0.4s;
     transform: translateY(5px);
-    
+
 }
 
 .sidebar__btn::after {
@@ -105,25 +110,27 @@ display: none;
     background-color: #fff;
     position: absolute;
     top: 1rem;
-   
+
     transition: all 0.4s;
     transform: translateY(-5px);
 }
 
 
-.sidebar__input:checked + .sidebar__label .sidebar__btn {
+.sidebar__input:checked+.sidebar__label .sidebar__btn {
     height: 0;
 }
-.sidebar__input:checked + .sidebar__label .sidebar__btn::before {
+
+.sidebar__input:checked+.sidebar__label .sidebar__btn::before {
     top: 0;
     transform: rotate(-45deg);
 }
-.sidebar__input:checked + .sidebar__label .sidebar__btn::after {
+
+.sidebar__input:checked+.sidebar__label .sidebar__btn::after {
     top: 0;
     transform: rotate(45deg);
 }
 
-.sidebar__input:checked ~ .list {
+.sidebar__input:checked~.list {
     opacity: 1;
     width: 50%;
     visibility: visible;
@@ -146,7 +153,7 @@ display: none;
 
 
 
-.sidebar__input:checked ~ .sidebar__bg {
+.sidebar__input:checked~.sidebar__bg {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -156,63 +163,76 @@ display: none;
     z-index: 30;
 }
 
-.sidebar__input:checked ~ .sidebar__bg .list{
+.sidebar__input:checked~.sidebar__bg .list {
     z-index: 10000;
     margin-top: 9rem;
-    transition: all 0.7s ease ;
-  
+    transition: all 0.7s ease;
+
 }
 
 
 .header {
-    background-image: linear-gradient(
-           
-           
-            #101d2cef ,         
-            #101d2cef          
-            
-        ),
+    background-image: linear-gradient(#101d2cef,
+            #101d2cef),
         url("/img/gal-4.jpeg");
     background-size: cover;
     background-position: center;
-   
-   
+
+
 }
 
-.line{
+.line {
     overflow: hidden;
     width: 100%;
     white-space: noWrap;
     border-color: #a6a6aa;
-   
+
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.line::before{
+.line::before {
     content: '';
     display: inline-block;
     width: 45%;
     height: 1px;
-   
+
     margin-right: 20px;
     background-color: #a6a6aa;
-    
- 
-    
+
+
+
 }
 
-.line::after{
+
+
+.line::after {
     content: '';
     display: inline-block;
-    width:45%;
+    width: 45%;
     height: 1px;
     background-color: #a6a6aa;
-   
+
     margin-left: 20px;
 
 
-    
-   
+
+
+}
+
+
+.story__pictures {
+    background-color: #c69963;
+    grid-column: full-start / col-end 4;
+
+    background-image: linear-gradient(to left, #c699637e, #b2855180),
+        url(/img/back.jpg);
+    background-size: cover;
+    background-position: center;
+/* 
+    display: grid;
+    grid-template-rows: repeat(6, [row-start] 1fr [row-end]);
+    grid-template-columns: repeat(6, [col-start] 1fr [col--end]); */
+    /* align-items: center; */
 }
