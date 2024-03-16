@@ -3,7 +3,7 @@ import BoxImage from "../modules/BoxImage";
 
 const RealTors = () => {
   return (
-    <div className=" w-full col-span-4  xl:col-span-1 xl:col-start-4 xl:row-start-1 h-[42vh] sm:h-[20vh] xl:h-[70vh] bg-backGround-dark">
+    <div className=" w-full col-span-4  xl:col-span-1 xl:col-start-4 xl:row-start-1 h-[52vh] sm:h-[20vh] xl:h-[70vh] bg-backGround-dark py-4">
       <div className="container flex flex-col items-center justify-center gap-10 sm:gap-0 sm:justify-evenly xl:justify-center w-full h-full  xl:gap-10">
         <p className="text-backGround-gold font-bold">سه مالک برتر</p>
         <div className="flex  flex-col sm:flex-row  gap-6  sm:justify-center xl:flex-col    md:gap-10  text-start  sm:px-6 md:px-0">

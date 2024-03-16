@@ -2,14 +2,14 @@ import React from 'react'
 
 const Header = () => {
   return (
-      <header className='header col-span-4 xl:col-span-3 h-[50vh] xl:h-[70vh] xl:mr-[5rem]'>
+      <header className='header col-span-4 xl:col-span-3 h-[60vh] xl:h-[70vh] xl:mr-[5rem] py-4'>
         <div className='container text-start flex flex-col justify-center gap-8 h-full'>
-    <img src="img/logo.png" alt="Nexter Logo" className="w-36 mx-auto"/>
-                <h3 className="text-backGround-gold font-bold text-xl"> :خانه خودتان</h3>
+    <img src="img/logo.png" alt="Nexter Logo" className="w-28 sm:w-36 mx-auto"/>
+                <h3 className="text-backGround-gold font-bold text-xl"> خانه خودتان:</h3>
                 <h1 className="text-white font-bold  sm:text-3xl">
                     با خرید خانه نهایت آزادی را احساس کنید
                 </h1>
-                <button className="button px-2 pt-2 pb-3 ml-auto text-[0.8rem]">
+                <button className="button py-2 ml-auto text-[0.8rem]">
                     املاک ما را مشاهده کنید
                 </button>
 

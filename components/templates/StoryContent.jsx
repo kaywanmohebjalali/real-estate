@@ -2,7 +2,7 @@ import React from 'react'
 
 const StoryContent = () => {
   return (
-    <div className="w-full md:w-[50%] flex flex-col justify-center items-start px-6 md:mx-8 xl:mx-12 gap-4">
+    <div className=" w-full md:w-[50%] flex flex-col justify-center items-start px-6 md:mx-8 xl:mx-12 gap-4">
     <h3 className="text-backGround-gold font-bold text-xl md:text-2xl">مشتریان خوشحال</h3>
 
     <h2 className="text-3xl">
