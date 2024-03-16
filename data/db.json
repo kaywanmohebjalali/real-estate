@@ -1,5 +1,76 @@
 {
-    "homes":[
-        {}
-    ]
+  "homes": [
+    {
+      "id": 1,
+      "location":"سنندج",
+      "title": "خانه ویلایی",
+      "img": "/img/house-1.jpeg",
+      "roomCount": 6,
+      "meterage": 250,
+      "price": 2000000
+    },
+    {
+      "id": 2,
+      "location":"تهران",
+      "title": "خانه فروشی",
+      "img": "/img/house-2.jpeg",
+      "roomCount": 2,
+      "meterage": 98,
+      "price": 3000000
+    },
+    {
+      "id": 3,
+      "location":"اصفهان",
+      "title": "خانه اجاره‌ای",
+      "img": "/img/house-3.jpeg",
+      "roomCount": 1,
+      "meterage": 180,
+      "price": 2500000
+    },
+    {
+      "id": 4,
+      "location":"شیراز",
+      "title": "سوییت",
+      "img": "/img/house-4.jpeg",
+      "roomCount": 5,
+      "meterage": 210,
+      "price": 500000
+    },
+    {
+      "id": 5,
+      "location":"تبریز",
+      "title": "باغ",
+      "img": "/img/house-5.jpeg",
+      "roomCount": 8,
+      "meterage": 290,
+      "price": 1200000
+    },
+    {
+      "id": 6,
+      "location":"مازندران",
+      "title": "واحد آپارتمان",
+      "img": "/img/house-6.jpeg",
+      "roomCount": 2,
+      "meterage": 150,
+      "price": 800000
+    },
+    {
+      "id": 7,
+      "location":"یزد",
+      "title": "خانه ویلایی",
+      "img": "/img/house-1.jpeg",
+      "roomCount": 5,
+      "meterage": 300,
+      "price": 2200000
+    },
+    {
+      "id": 8,
+      "location":"لرستان",
+      "title": "خانه اجاره‌ای",
+      "img": "/img/house-2.jpeg",
+      "roomCount": 3,
+      "meterage": 200,
+      "price": 5000000
+    }
+  ]
 }
