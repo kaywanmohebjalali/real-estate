@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Header = () => {
@@ -9,9 +10,9 @@ const Header = () => {
                 <h1 className="text-white font-bold  sm:text-3xl">
                     با خرید خانه نهایت آزادی را احساس کنید
                 </h1>
-                <button className="button py-2 ml-auto text-[0.8rem]">
+                <Link href="/homes" className="button  py-2 px-4 ml-auto text-lg">
                     املاک ما را مشاهده کنید
-                </button>
+                </Link>
 
                 <p className="line text-gray-100 text-center">دیده می شود در</p>
                 <figure className=" flex flex-row-reverse justify-between w-full">
