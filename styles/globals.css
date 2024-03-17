@@ -52,7 +52,8 @@
     }
 
     .button {
-        @apply flex justify-center min-w-32 bg-backGround-gold pt-1 pb-2 text-white text-[0.9rem] font-bold rounded-sm
+        /* @apply flex justify-center min-w-32 bg-backGround-gold pt-1 pb-2 text-white text-[0.9rem] font-bold rounded-sm */
+        @apply flex justify-center bg-backGround-gold py-1 text-white text-[0.9rem] font-bold rounded-sm
     }
 }
 
