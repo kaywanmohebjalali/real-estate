@@ -1,10 +1,11 @@
 
 
+import AllHouses from '@/components/templates/AllHouses'
 import React from 'react'
 
 const index = () => {
   return (
-    <h1>All Homes</h1>
+    <AllHouses/>
   )
 }
 
