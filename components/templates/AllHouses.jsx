@@ -1,18 +1,25 @@
-import React from 'react'
-import Pagination from '../modules/Pagination'
-import HomeCard from '../modules/HomeCard'
+import React from "react";
+import Pagination from "../modules/Pagination";
 import db from "../../data/db.json";
+import SearchFilter from "../modules/SearchFilter";
+import { useSearchParams } from "next/navigation";
 
 const AllHouses = () => {
-    
-   
-  return (
-    <div className='mt-[45vh] sm:mt-[15vh]'>
-                 <Pagination db={db}  count={5}/>
-                    
-                 
-    </div>
-  )
-}
+  const {homes}=db
+  const searchParams = useSearchParams();
+  const key=searchParams?.get('kayHome');
+  const filterDB=key?homes.filter(home=>key?.includes(home.title)):homes
 
-export default AllHouses
+  return (
+    <div className="mt-[45vh] sm:mt-[15vh]">
+      <SearchFilter filterField='kayHome'/>
+      <Pagination homes={filterDB} count={3} />
+    </div>
+  );
+};
+
+export default AllHouses;
+
+
+// خانه 
+// ویلایی

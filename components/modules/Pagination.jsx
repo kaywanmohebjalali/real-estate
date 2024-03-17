@@ -2,15 +2,18 @@ import React, { useRef, useState } from "react";
 import HomeCard from "./HomeCard";
 import { HiChevronDoubleLeft, HiChevronDoubleRight  } from "react-icons/hi";
 
-const Pagination = ({ db, count, style }) => {
-  const { homes } = db;
-  const countPage = useRef(Math.round(homes?.length / count));
+const Pagination = ({ homes, count, style }) => {
+
+  const countPage = Math.ceil(homes?.length / count);
+
+  console.log('Math.round(homes?.length / count) : ',Math.ceil(homes?.length / count));
+  console.log("countPage :",countPage);
   const [page, setPage] = useState(0);
   
 
   function nextPage(){
 
-    if(page+1<countPage.current)setPage(c=>c+1)
+    if(page+1<countPage)setPage(c=>c+1)
   }
   function backPage(){
     if(page>0)setPage(c=>c-1)
@@ -29,7 +32,7 @@ const Pagination = ({ db, count, style }) => {
 
        <p className="cursor-pointer rounded-full  bg-indigo-500 p-2 text-white font-bold"  onClick={backPage}><HiChevronDoubleLeft/></p>
            {
-               countPage.current&& Array.from({ length: countPage.current},(value, index) => index).
+               countPage&& Array.from({ length: countPage},(value, index) => index).
                map(num=> <p className={`cursor-pointer flex justify-center items-center rounded-full  ${page+1==num+1?'bg-indigo-500':'bg-gray-100'} py-1 px-3 text-white font-bold transition ease-in-out delay-30 `} key={num} onClick={()=>setPage(num)}>{num+1}</p>)
             }
             <p className="cursor-pointer rounded-full bg-indigo-500 p-2 text-white font-bold"  onClick={nextPage}><HiChevronDoubleRight/>
