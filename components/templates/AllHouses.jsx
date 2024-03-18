@@ -26,7 +26,7 @@ const AllHouses = () => {
       </div>
       {!filterDB.length?<div className="w-full text-center text-2xl text-indigo-500 mt-10">خانه ای یافت نشد</div>:<>
 
-      <Pagination key={Math.random()} homes={finalDB} count={6} />
+      <Pagination key={Math.random()} homes={finalDB} count={4} />
       </>
         
     }

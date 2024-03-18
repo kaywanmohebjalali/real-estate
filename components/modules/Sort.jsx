@@ -1,26 +1,33 @@
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 const Sort = ({ filterField }) => {
-  const { replace, pathname,query } = useRouter();
+  const { replace, pathname, query, asPath } = useRouter();
+  const selectRef = useRef();
   const lastValue = useRef("");
 
   const searchParams = useSearchParams();
-  
+
   const params = new URLSearchParams(searchParams);
   function setUrl(value) {
-    if (value!='choose' && value != lastValue.current) {
+    if (value != "choose" && value != lastValue.current) {
       lastValue.current = value;
       params.set(filterField, value);
       replace(`${pathname}?${params.toString()}`);
     }
   }
-  
+  useEffect(() => {
+    if (!asPath.includes("keySort")) {
+      selectRef.current.value = "choose";
+      lastValue.current = "";
+    }
+  }, [query]);
   return (
     <div className="w-1/2 text-black">
       <select
-        defaultValue='choose'
+        ref={selectRef}
+        defaultValue="choose"
         onClick={(e) => setUrl(e.target.value)}
         name="cars"
         id="cars"
