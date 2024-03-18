@@ -32,7 +32,7 @@ const Pagination = ({ homes, count, style }) => {
        <p className="cursor-pointer rounded-full  bg-indigo-500 p-2 text-white font-bold"  onClick={backPage}><HiChevronDoubleLeft/></p>
            {
                countPage&& Array.from({ length: countPage},(value, index) => index).
-               map(num=> <p className={`cursor-pointer flex justify-center items-center rounded-full  ${page+1==num+1?'bg-indigo-500':'bg-gray-100'} py-1 px-3 text-white font-bold transition ease-in-out delay-30 `} key={num} onClick={()=>setPage(num)}>{num+1}</p>)
+               map(num=> <p className={`cursor-pointer flex justify-center items-center rounded-full  ${page+1==num+1?'bg-indigo-500':'bg-gray-100'} py-1 px-3 text-white font-bold transition ease-in-out delay-30 `} key={num} onClick={()=>setPage(num)}>{(num+1)}</p>)
             }
             <p className="cursor-pointer rounded-full bg-indigo-500 p-2 text-white font-bold"  onClick={nextPage}><HiChevronDoubleRight/>
             </p>

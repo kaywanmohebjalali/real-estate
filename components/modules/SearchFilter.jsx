@@ -2,23 +2,42 @@
 /* eslint-disable react/prop-types */
 import { useSearchParams, usePathname } from "next/navigation";
 import { useRouter } from "next/router";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import { HiMiniMagnifyingGlass } from "react-icons/hi2";
-
+// سوییت
 const SearchFilter = ({ filterField = "" }) => {
   const inputRef = useRef();
-  const { replace } = useRouter();
+  const { replace, asPath,pathname:path  } = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const params = new URLSearchParams(searchParams);
+
   function handleClick(value) {
-    params.set(filterField, value);
-    replace(`${pathname}?${params.toString()}`);
+
+    
+    if (!value ) {
+      if(asPath!='/homes') replace(`${pathname}`);
+    } else {
+      params.set(filterField, value);
+      replace(`${pathname}?${params.toString()}`);
+    }
   }
 
+  function handleEnter(event) {
+    if (event?.code == "Enter") {
+      const value = inputRef.current.value;
+      handleClick(value);
+  }
+}
+  
 
+  useEffect(() => {
+    window.addEventListener("keyup", handleEnter);
+
+    return () => window.removeEventListener("keyup", handleEnter);
+  }, []);
 
   return (
     <div className="w-1/3 mx-auto flex justify-between px-2 items-center bg-gray-200 rounded-md shadow-md">
