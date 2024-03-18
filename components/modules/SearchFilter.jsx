@@ -15,7 +15,7 @@ const SearchFilter = ({ filterField = "" }) => {
   const searchParams = useSearchParams();
  
   const params = new URLSearchParams(searchParams);
-
+ 
    
   function handleClick(value) {
     if (!value) {
