@@ -35,7 +35,6 @@ const AllHouses = () => {
                       )
                     : filterDB.current));
     setRender(Math.random());
-    console.log("keySort.current==room :", keySort.current == "room");
   }, [keySort.current, keyHome.current]);
 
   return (
