@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import HomeCard from "./HomeCard";
 import { HiChevronDoubleLeft, HiChevronDoubleRight  } from "react-icons/hi";
 const Pagination = ({ homes, count, style }) => {

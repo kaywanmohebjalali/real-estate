@@ -10,6 +10,7 @@ export default function App({ Component, pageProps }) {
     
 
      {!FlagIsComponent?<TopSite/>:''}
+    
      {!FlagIsComponent?<SideBar/>:''}
    
        <div className="my-6 ">

@@ -1,24 +1,25 @@
-"use client";
+
 /* eslint-disable react/prop-types */
-import { useSearchParams, usePathname } from "next/navigation";
+import { useSearchParams} from "next/navigation";
 import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
 
 import { HiMiniMagnifyingGlass } from "react-icons/hi2";
-// سوییت
+
 const SearchFilter = ({ filterField = "" }) => {
   const inputRef = useRef();
-  const { replace, asPath} = useRouter();
-  const pathname = usePathname();
+  const { replace, asPath, pathname, query } = useRouter();
+
+
+
   const searchParams = useSearchParams();
 
   const params = new URLSearchParams(searchParams);
-  
+
+   
   function handleClick(value) {
-  
-    
-    if (!value ) {
-      if(asPath!='/homes') replace(`${pathname}`);
+    if (!value) {
+      if (asPath != "/homes") replace(`${pathname}`);
     } else {
       params.set(filterField, value);
       replace(`${pathname}?${params.toString()}`);
@@ -29,9 +30,8 @@ const SearchFilter = ({ filterField = "" }) => {
     if (event?.code == "Enter") {
       const value = inputRef.current.value;
       handleClick(value);
+    }
   }
-}
-  
 
   useEffect(() => {
     window.addEventListener("keyup", handleEnter);

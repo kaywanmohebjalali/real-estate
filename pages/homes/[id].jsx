@@ -1,11 +1,17 @@
 import { useRouter } from "next/router";
+
 import React from "react";
 import db from "../../data/db.json";
+import { usePathname } from "next/navigation";
 
 const Home = () => {
-  const { query } = useRouter();
+
+  const { query,pathname } = useRouter();
   const homeId = query?.id;
   const { homes } = db;
+  const path =usePathname()
+  console.log('pathname : ',pathname);
+  console.log('path : ',path);
   const {
     title,
     img,
@@ -17,9 +23,10 @@ const Home = () => {
     buildingType,
     YearOfConstruction,
     description,
-  } = homes.find((home) => home.id == homeId);
+  } =homeId ? homes.find((home) => home?.id == homeId):{};
 
   return (
+
     <div className="container mt-[47vh] sm:mt-[15vh]">
       <div className="flex justify-evenly gap-4 flex-col lg:flex-row items-center">
         <div className="home-img  w-[80%] lg:w-[40%]  h-full">
@@ -30,7 +37,7 @@ const Home = () => {
           <div className="">
             <h1 className="flex justify-between font-bold text-[1.3rem] sm:text-2xl">
               <span className="">{title}</span>
-              <span>{price.toLocaleString()} تومان</span>
+              <span>{price?.toLocaleString()} تومان</span>
             </h1>
             <div className=" flex gap-4 my-4">
               <span className=" green-tag button w-16 bg-green-500">ویژه</span>
