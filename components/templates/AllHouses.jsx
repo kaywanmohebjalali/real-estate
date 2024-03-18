@@ -14,9 +14,9 @@ const AllHouses = () => {
    keySort=query.keySort;
    keyHome=query.kayHome;
   filterDB=keyHome?homes.filter(home=>keyHome?.includes(home.title)):homes
-  finalDB =keySort=='room'? (filterDB.sort((p1, p2) => (p1.roomCount < p2.roomCount) ? 1 : (p1.roomCount > p2.roomCount) ? -1 : 0)):
-  keySort=='price'? (filterDB.sort((p1, p2) => (p1.price < p2.price) ? 1 : (p1.price > p2.price) ? -1 : 0)):
-  keySort=='size'? (filterDB.sort((p1, p2) => (p1.meterage < p2.meterage) ? 1 : (p1.meterage > p2.meterage) ? -1 : 0)):filterDB
+  finalDB =keySort=='room'? (filterDB.sort((p1, p2) =>  p2.roomCount - p1.roomCount )):
+  finalDB =keySort=='price'? (filterDB.sort((p1, p2) =>  p2.price - p1.price )):
+  finalDB =keySort=='size'? (filterDB.sort((p1, p2) =>  p2.meterage - p1.meterage )):filterDB
  
   return (
     <div className="mt-[45vh] sm:mt-[15vh]">
