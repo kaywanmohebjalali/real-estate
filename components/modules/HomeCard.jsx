@@ -22,12 +22,12 @@ const HomeCard = ({id,title='', img='', location='', roomCount='', meterage='', 
 
         <div className="flex items-center gap-1">
          <HiOutlineLibrary/>
-          <p className="card__text">{meterage} متر مربع</p>
+          <p className="">{meterage} متر مربع</p>
         </div>
 
         <div className="flex items-center gap-1">
            <HiOutlineKey />
-          <p className="text-[0.6rem] sm:text-[0.9rem] h-[40px]">{price.toLocaleString()} میلیون تومان</p>
+          <p className="text-[0.6rem] sm:text-[0.9rem] h-[40px] flex items-center">{price.toLocaleString()} میلیون تومان</p>
         </div>
       </div>
 
