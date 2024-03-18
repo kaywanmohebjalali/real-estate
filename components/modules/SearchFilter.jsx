@@ -8,12 +8,12 @@ import { HiMiniMagnifyingGlass } from "react-icons/hi2";
 
 const SearchFilter = ({ filterField = "" }) => {
   const inputRef = useRef();
-  const { replace, asPath, pathname, query } = useRouter();
+  const { replace, asPath, pathname, query} = useRouter();
 
 
 
   const searchParams = useSearchParams();
-
+ 
   const params = new URLSearchParams(searchParams);
 
    
@@ -42,6 +42,7 @@ const SearchFilter = ({ filterField = "" }) => {
   return (
     <div className="w-1/3 mx-auto flex justify-between px-2 items-center bg-gray-200 rounded-md shadow-md">
       <input
+      defaultValue={query[filterField]}
         ref={inputRef}
         className=" px-2 py-1 text-black w-[90%] bg-gray-200 border-none outline-none"
       ></input>

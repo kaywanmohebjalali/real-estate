@@ -2,16 +2,14 @@ import { useRouter } from "next/router";
 
 import React from "react";
 import db from "../../data/db.json";
-import { usePathname } from "next/navigation";
 
 const Home = () => {
 
-  const { query,pathname } = useRouter();
+  const { query} = useRouter();
   const homeId = query?.id;
   const { homes } = db;
-  const path =usePathname()
-  console.log('pathname : ',pathname);
-  console.log('path : ',path);
+
+
   const {
     title,
     img,
