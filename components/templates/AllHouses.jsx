@@ -9,11 +9,11 @@ const AllHouses = () => {
   const searchParams = useSearchParams();
   const key=searchParams?.get('kayHome');
   const filterDB=key?homes.filter(home=>key?.includes(home.title)):homes
-
+  console.log('filterDB : ',filterDB);
   return (
     <div className="mt-[45vh] sm:mt-[15vh]">
       <SearchFilter filterField='kayHome'/>
-      <Pagination homes={filterDB} count={3} />
+      <Pagination key={Math.random()} homes={filterDB} count={3} />
     </div>
   );
 };
@@ -21,5 +21,3 @@ const AllHouses = () => {
 export default AllHouses;
 
 
-// خانه 
-// ویلایی

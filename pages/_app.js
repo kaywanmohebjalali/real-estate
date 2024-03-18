@@ -4,14 +4,20 @@ import TopSite from "@/components/templates/TopSite";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
+  const FlagIsComponent=Component?.displayName=='PageNotFound';
   return(
-   <>
-   <TopSite/>
-   <SideBar/>
+    <>
+    
+
+     {!FlagIsComponent?<TopSite/>:''}
+     {!FlagIsComponent?<SideBar/>:''}
+   
        <div className="my-6 ">
-     <Component {...pageProps} />
+      <Component {...pageProps} />
      </div>
-     <Footer/>
+     {!FlagIsComponent?<Footer/>:''}
+     
+    
    </>
 
     

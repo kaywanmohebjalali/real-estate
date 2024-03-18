@@ -6,8 +6,7 @@ const Pagination = ({ homes, count, style }) => {
 
   const countPage = Math.ceil(homes?.length / count);
 
-  console.log('Math.round(homes?.length / count) : ',Math.ceil(homes?.length / count));
-  console.log("countPage :",countPage);
+
   const [page, setPage] = useState(0);
   
 
