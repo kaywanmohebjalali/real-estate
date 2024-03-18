@@ -1,14 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import HomeCard from "./HomeCard";
 import { HiChevronDoubleLeft, HiChevronDoubleRight  } from "react-icons/hi";
-
 const Pagination = ({ homes, count, style }) => {
 
   const countPage = Math.ceil(homes?.length / count);
 
 
   const [page, setPage] = useState(0);
-  
+ 
 
   function nextPage(){
 

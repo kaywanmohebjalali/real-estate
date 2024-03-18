@@ -8,14 +8,14 @@ import { HiMiniMagnifyingGlass } from "react-icons/hi2";
 // سوییت
 const SearchFilter = ({ filterField = "" }) => {
   const inputRef = useRef();
-  const { replace, asPath,pathname:path  } = useRouter();
+  const { replace, asPath} = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const params = new URLSearchParams(searchParams);
-
+  
   function handleClick(value) {
-
+  
     
     if (!value ) {
       if(asPath!='/homes') replace(`${pathname}`);
@@ -37,7 +37,7 @@ const SearchFilter = ({ filterField = "" }) => {
     window.addEventListener("keyup", handleEnter);
 
     return () => window.removeEventListener("keyup", handleEnter);
-  }, []);
+  }, [asPath]);
 
   return (
     <div className="w-1/3 mx-auto flex justify-between px-2 items-center bg-gray-200 rounded-md shadow-md">
