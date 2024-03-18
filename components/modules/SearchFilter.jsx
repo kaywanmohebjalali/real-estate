@@ -40,7 +40,7 @@ const SearchFilter = ({ filterField = "" }) => {
   }, [asPath]);
 
   return (
-    <div className="w-1/3 mx-auto flex justify-between px-2 items-center bg-gray-200 rounded-md shadow-md">
+    <div className="w-1/2 mr-auto flex justify-between px-2 py-1 items-center bg-gray-200 rounded-md shadow-md">
       <input
       defaultValue={query[filterField]}
         ref={inputRef}
