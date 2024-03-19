@@ -4,7 +4,7 @@ import { HiOutlineLocationMarker,HiOutlineUser,HiOutlineLibrary,HiOutlineKey   }
 
 const HomeCard = ({id,title='', img='', location='', roomCount='', meterage='', price='' }) => {
   return (
-    <div className="card max-w-[350px] mx-auto bg-[#f9f7f6] ">
+    <div className="card max-w-[350px] mx-auto bg-[#f9f7f6] w-full ">
       <img src={img} alt="House 6" className="w-full h-[50%]" />
       <h5 className="button w-2/3 bg-backGround-dark mx-auto translate-y-[-50%]">  {title}</h5>
 

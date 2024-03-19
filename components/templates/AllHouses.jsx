@@ -49,7 +49,7 @@ const AllHouses = () => {
         </div>
       ) : (
         <>
-          <Pagination key={Math.random()} homes={finalDB.current} count={4} />
+          <Pagination key={Math.random()} homes={finalDB.current} count={2} />
         </>
       )}
     </div>
