@@ -20,7 +20,7 @@ const AllHouses = () => {
   keyHome.current = query?.kayHome;
   keyPage.current =query?.page==0?1:query?.page;
   
-  console.log('uu : ',query);
+
   useEffect(() => {
     filterDB.current = keyHome.current
       ? homes.filter((home) => keyHome.current?.includes(home.title))

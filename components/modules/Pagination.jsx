@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 const Pagination = ({ homes, count, style , page}) => {
   const countPage = Math.ceil(homes?.length / count);
   
-  const { replace, asPath, pathname, query} = useRouter();
+  const { replace, pathname} = useRouter();
   
   
   
@@ -16,7 +16,7 @@ const Pagination = ({ homes, count, style , page}) => {
   
   
   function handleClick(value) {
-
+        
         params.set("page", value+1);
         replace(`${pathname}?${params.toString()}`);
       }

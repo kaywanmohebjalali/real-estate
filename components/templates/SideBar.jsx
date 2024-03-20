@@ -27,17 +27,19 @@ const SideBar = () => {
                     <li className="button p-1 w-24">
                         <Link href="/" className='' onClick={OffCheckedInput}>صفحه اصلی</Link>
                     </li>
+
+                    <li className="button p-1 w-24" onClick={OffCheckedInput}>
+                        <Link href="/homes?page=1" className="">خانه ها</Link>
+                    </li>
                     <li className="button p-1 w-24">
-                        <Link href="#" className="" onClick={OffCheckedInput}>ویژگی ها</Link>
+                        <Link href="/" className="" onClick={OffCheckedInput}>ویژگی ها</Link>
                     </li>
                     <li className="button p-1 w-24" onClick={OffCheckedInput}>
-                        <Link href="" className="">نظرات</Link>
+                        <Link href="/" className="">نظرات</Link>
                     </li>
+                 
                     <li className="button p-1 w-24" onClick={OffCheckedInput}>
-                        <Link href="houses.html" className="">خانه ها</Link>
-                    </li>
-                    <li className="button p-1 w-24" onClick={OffCheckedInput}>
-                        <Link href="#" className="">گالری</Link>
+                        <Link href="/" className="">گالری</Link>
                     </li>
                 </ul>
                 </div>
