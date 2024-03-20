@@ -1,47 +1,41 @@
 import React, { useEffect, useState } from "react";
 import HomeCard from "./HomeCard";
 import { HiChevronDoubleLeft, HiChevronDoubleRight } from "react-icons/hi";
-import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
-const Pagination = ({ homes, count, style, page=0 }) => {
-
-
-
+import { useSearchParams } from "next/navigation";
+const Pagination = ({ homes, count, style , page}) => {
   const countPage = Math.ceil(homes?.length / count);
-  const { replace, pathname} = useRouter();
-
-  // const [page, setPage] = useState(page);
-
-
-  // console.log('p : ',page);
+  
+  const { replace, asPath, pathname, query} = useRouter();
+  
+  
+  
   const searchParams = useSearchParams();
- 
+  
   const params = new URLSearchParams(searchParams);
- 
-   
+  
+  
   function handleClick(value) {
-    // if (!value) {
-    //   if (asPath != "/homes") replace(`${pathname}`);
-    // } else {
-      params.set("page", value+1);
-      replace(`${pathname}?${params.toString()}`);
-    // }
+
+        params.set("page", value+1);
+        replace(`${pathname}?${params.toString()}`);
+      }
+      
+      useEffect(()=>{
+  if (page===undefined) {
+     handleClick(0)
   }
+  },[page])
 
 
 
   function nextPage() {
-    if (page + 1 < countPage) setPage((c) => c + 1);
+    if (page + 1 < countPage) handleClick(page+1);
   }
   function backPage() {
-    if (page > 0) setPage((c) => c - 1);
+    if (page > 0) handleClick(page-1);
   }
 
-  // useEffect(()=>{
-  //   console.log('page : ',page);
-  //   console.log('pppppp :',page==undefined);
-  //   if(page==0)handleClick(0)  
-  // },[])
 
 
   return (
@@ -66,7 +60,7 @@ const Pagination = ({ homes, count, style, page=0 }) => {
           Array.from({ length: countPage }).map((item, index) => (
             <p
               className={`cursor-pointer flex justify-center items-center rounded-full  ${
-                page == index ? "bg-indigo-500" : "bg-gray-100"
+                page  == index  ? "bg-indigo-500" : "bg-gray-100"
               } py-1 px-3 text-white font-bold transition ease-in-out delay-30 `}
               key={index}
               onClick={() => handleClick(index)}
