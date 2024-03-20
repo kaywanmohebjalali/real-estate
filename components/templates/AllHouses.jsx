@@ -13,10 +13,12 @@ const AllHouses = () => {
   const finalDB = useRef(homes);
   const keySort = useRef("");
   const keyHome = useRef("");
-
+  const page = useRef("");
   keySort.current = query.keySort;
   keyHome.current = query.kayHome;
-
+  page.current = query.page;
+  
+  console.log('pageggggg : ',page?.current);
   useEffect(() => {
     filterDB.current = keyHome.current
       ? homes.filter((home) => keyHome.current?.includes(home.title))
@@ -49,7 +51,7 @@ const AllHouses = () => {
         </div>
       ) : (
         <>
-          <Pagination key={Math.random()} homes={finalDB.current} count={2} />
+          <Pagination key={Math.random()} homes={finalDB.current} count={8} page={page?.current?page.current-1:page.current}/>
         </>
       )}
     </div>

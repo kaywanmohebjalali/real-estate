@@ -1,10 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import HomeCard from "./HomeCard";
 import { HiChevronDoubleLeft, HiChevronDoubleRight } from "react-icons/hi";
-const Pagination = ({ homes, count, style }) => {
-  const countPage = Math.ceil(homes?.length / count);
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
+const Pagination = ({ homes, count, style, page=0 }) => {
 
-  const [page, setPage] = useState(0);
+
+
+  const countPage = Math.ceil(homes?.length / count);
+  const { replace, pathname} = useRouter();
+
+  // const [page, setPage] = useState(page);
+
+
+  // console.log('p : ',page);
+  const searchParams = useSearchParams();
+ 
+  const params = new URLSearchParams(searchParams);
+ 
+   
+  function handleClick(value) {
+    // if (!value) {
+    //   if (asPath != "/homes") replace(`${pathname}`);
+    // } else {
+      params.set("page", value+1);
+      replace(`${pathname}?${params.toString()}`);
+    // }
+  }
+
+
 
   function nextPage() {
     if (page + 1 < countPage) setPage((c) => c + 1);
@@ -12,6 +36,12 @@ const Pagination = ({ homes, count, style }) => {
   function backPage() {
     if (page > 0) setPage((c) => c - 1);
   }
+
+  // useEffect(()=>{
+  //   console.log('page : ',page);
+  //   console.log('pppppp :',page==undefined);
+  //   if(page==0)handleClick(0)  
+  // },[])
 
 
   return (
@@ -36,10 +66,10 @@ const Pagination = ({ homes, count, style }) => {
           Array.from({ length: countPage }).map((item, index) => (
             <p
               className={`cursor-pointer flex justify-center items-center rounded-full  ${
-                page + 1 == index + 1 ? "bg-indigo-500" : "bg-gray-100"
+                page == index ? "bg-indigo-500" : "bg-gray-100"
               } py-1 px-3 text-white font-bold transition ease-in-out delay-30 `}
               key={index}
-              onClick={() => setPage(index)}
+              onClick={() => handleClick(index)}
             >
               {index + 1}
             </p>
