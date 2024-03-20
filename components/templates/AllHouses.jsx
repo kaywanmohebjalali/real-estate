@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef, useState } from "react";
 import Pagination from "../modules/Pagination";
 import db from "../../data/db.json";
@@ -13,10 +14,13 @@ const AllHouses = () => {
   const finalDB = useRef(homes);
   const keySort = useRef("");
   const keyHome = useRef("");
+  const keyPage = useRef("");
 
-  keySort.current = query.keySort;
-  keyHome.current = query.kayHome;
-
+  keySort.current = query?.keySort;
+  keyHome.current = query?.kayHome;
+  keyPage.current =query?.page==0?1:query?.page;
+  
+  console.log('uu : ',query);
   useEffect(() => {
     filterDB.current = keyHome.current
       ? homes.filter((home) => keyHome.current?.includes(home.title))
@@ -49,7 +53,7 @@ const AllHouses = () => {
         </div>
       ) : (
         <>
-          <Pagination key={Math.random()} homes={finalDB.current} count={2} />
+          <Pagination key={Math.random()} homes={finalDB.current} count={4} page={keyPage.current?+keyPage.current-1:undefined}/>
         </>
       )}
     </div>

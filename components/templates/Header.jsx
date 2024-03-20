@@ -10,7 +10,7 @@ const Header = () => {
                 <h1 className="text-white font-bold  sm:text-3xl">
                     با خرید خانه نهایت آزادی را احساس کنید
                 </h1>
-                <Link href="/homes" className="button  py-2 px-4 ml-auto text-lg">
+                <Link href="/homes/?page=1" className="button  py-2 px-4 ml-auto text-lg">
                     املاک ما را مشاهده کنید
                 </Link>
 

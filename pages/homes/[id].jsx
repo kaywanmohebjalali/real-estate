@@ -4,7 +4,6 @@ import React from "react";
 import db from "../../data/db.json";
 
 const Home = () => {
-
   const { query} = useRouter();
   const homeId = query?.id;
   const { homes } = db;

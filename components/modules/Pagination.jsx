@@ -1,16 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import HomeCard from "./HomeCard";
 import { HiChevronDoubleLeft, HiChevronDoubleRight } from "react-icons/hi";
-const Pagination = ({ homes, count, style }) => {
+import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
+const Pagination = ({ homes, count, style , page}) => {
   const countPage = Math.ceil(homes?.length / count);
+  
+  const { replace, asPath, pathname, query} = useRouter();
+  
+  
+  
+  const searchParams = useSearchParams();
+  
+  const params = new URLSearchParams(searchParams);
+  
+  
+  function handleClick(value) {
 
-  const [page, setPage] = useState(0);
+        params.set("page", value+1);
+        replace(`${pathname}?${params.toString()}`);
+      }
+      
+      useEffect(()=>{
+  if (page===undefined) {
+     handleClick(0)
+  }
+  },[page])
+
+
 
   function nextPage() {
-    if (page + 1 < countPage) setPage((c) => c + 1);
+    if (page + 1 < countPage) handleClick(page+1);
   }
   function backPage() {
-    if (page > 0) setPage((c) => c - 1);
+    if (page > 0) handleClick(page-1);
   }
 
 
@@ -36,10 +59,10 @@ const Pagination = ({ homes, count, style }) => {
           Array.from({ length: countPage }).map((item, index) => (
             <p
               className={`cursor-pointer flex justify-center items-center rounded-full  ${
-                page + 1 == index + 1 ? "bg-indigo-500" : "bg-gray-100"
+                page  == index  ? "bg-indigo-500" : "bg-gray-100"
               } py-1 px-3 text-white font-bold transition ease-in-out delay-30 `}
               key={index}
-              onClick={() => setPage(index)}
+              onClick={() => handleClick(index)}
             >
               {index + 1}
             </p>
