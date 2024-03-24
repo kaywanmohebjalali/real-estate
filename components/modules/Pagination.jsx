@@ -18,7 +18,10 @@ const Pagination = ({ homes, count, style , page}) => {
   function handleClick(value) {
         
         params.set("page", value+1);
+  
+ 
         replace(`${pathname}?${params.toString()}`);
+
       }
       
       useEffect(()=>{

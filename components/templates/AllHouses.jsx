@@ -21,6 +21,14 @@ const AllHouses = () => {
   keyPage.current =query?.page==0?1:query?.page;
   
 
+setTimeout(() => {
+  window.scrollTo({
+    top: window.innerHeight,
+    behavior: "smooth"
+  })
+}, 50);
+
+
   useEffect(() => {
     filterDB.current = keyHome.current
       ? homes.filter((home) => keyHome.current?.includes(home.title))
@@ -39,7 +47,12 @@ const AllHouses = () => {
                       )
                     : filterDB.current));
     setRender(Math.random());
+
   }, [keySort.current, keyHome.current]);
+  
+
+
+  
 
   return (
     <div className="mt-[45vh] sm:mt-[15vh]">
